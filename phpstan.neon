@@ -1,0 +1,9 @@
+parameters:
+    level: 8
+    phpVersion: 80400
+    paths:
+        - src
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    ignoreErrors:
+        - '#Parameter \#1 .* of class .* expects .*, array given#'

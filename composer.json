@@ -1,0 +1,63 @@
+{
+    "name": "carmelosantana/coqui-toolkit-vercel",
+    "description": "Vercel deployment management toolkit for Coqui — projects, deployments, domains, environment variables, logs, and team info via the Vercel REST API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Carmelo Santana"
+        }
+    ],
+    "keywords": [
+        "php-agents",
+        "vercel",
+        "deployment",
+        "hosting",
+        "coqui",
+        "toolkit"
+    ],
+    "require": {
+        "php": "^8.4",
+        "symfony/http-client": "^7.0"
+    },
+    "require-dev": {
+        "carmelosantana/php-agents": "^0.7",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitVercel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CarmeloSantana\\CoquiToolkitVercel\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse"
+    },
+    "extra": {
+        "php-agents": {
+            "toolkits": [
+                "CarmeloSantana\\CoquiToolkitVercel\\VercelToolkit"
+            ],
+            "description": "Vercel — manage projects, deployments, domains, environment variables, logs, and teams via the Vercel REST API",
+            "credentials": {
+                "VERCEL_API_TOKEN": "Vercel API access token — create one at https://vercel.com/account/tokens",
+                "VERCEL_TEAM_ID": "(Optional) Vercel Team ID or slug — find it in your team's General Settings page"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
